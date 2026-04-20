@@ -1,0 +1,961 @@
+{
+  "info": {
+    "_postman_id": "eec0ad66-d826-496e-9489-cfa4d879382a",
+    "name": "RMx Pricing Engine API",
+    "description": "Flintfox RMx Pricing Engine API v1 — Host: https://ffa-demo.flintfox.com:8005",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54046651",
+    "_collection_link": "https://go.postman.co/collection/54046651-eec0ad66-d826-496e-9489-cfa4d879382a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Accrual",
+      "item": [
+        {
+          "name": "InitializeAccrualRun",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyCode\": \"{{company_code}}\",\n  \"currencyCode\": \"{{currency_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"runLevel\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Accrual/InitializeAccrualRun?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Accrual",
+                "InitializeAccrualRun"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Initializes an accrual run. runLevel: 0=Incremental, 1=Full"
+          },
+          "response": []
+        },
+        {
+          "name": "InitializeSteppedBreaks",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyCode\": \"{{company_code}}\",\n  \"currencyCode\": \"{{currency_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"steppedBreakQuantities\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Accrual/InitializeSteppedBreaks?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Accrual",
+                "InitializeSteppedBreaks"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Initializes stepped breaks for an accrual run"
+          },
+          "response": []
+        },
+        {
+          "name": "CompleteAccrualRun",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyCode\": \"{{company_code}}\",\n  \"currencyCode\": \"{{currency_code}}\",\n  \"runType\": \"{{run_type}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Accrual/CompleteAccrualRun?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Accrual",
+                "CompleteAccrualRun"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Completes an accrual run"
+          },
+          "response": []
+        },
+        {
+          "name": "CancelAccrualRun",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyCode\": \"{{company_code}}\",\n  \"currencyCode\": \"{{currency_code}}\",\n  \"runType\": \"{{run_type}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Accrual/CancelAccrualRun?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Accrual",
+                "CancelAccrualRun"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Cancels an accrual run"
+          },
+          "response": []
+        },
+        {
+          "name": "GetPriceForeignKeys",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyCode\": \"{{company_code}}\",\n  \"currencyCode\": \"{{currency_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"priceKeys\": []\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Accrual/GetPriceForeignKeys?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Accrual",
+                "GetPriceForeignKeys"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Gets price foreign keys for an accrual run"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cache",
+      "item": [
+        {
+          "name": "GetCacheInfo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Cache/GetCacheInfo?companyCode={{company_code}}&clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Cache",
+                "GetCacheInfo"
+              ],
+              "query": [
+                {
+                  "key": "companyCode",
+                  "value": "{{company_code}}"
+                },
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Queries cache state — returns version, sync time, and errors. Good first test to verify connectivity."
+          },
+          "response": []
+        },
+        {
+          "name": "QueryCache",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyCode\": \"{{company_code}}\",\n  \"currencyCode\": \"{{currency_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"cacheObjectType\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Cache/QueryCache?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Cache",
+                "QueryCache"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Queries specific objects in the cache. cacheObjectType: 0=All, 1=Company, 2=Component, 9=TradeAgreementVersion, 14=TradeAgreementPrice, 19=PriceModel"
+          },
+          "response": []
+        },
+        {
+          "name": "SerializeCache",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Cache/SerializeCache?companyCode={{company_code}}&currencyCode={{currency_code}}&runType={{run_type}}&directoryPath=&clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Cache",
+                "SerializeCache"
+              ],
+              "query": [
+                {
+                  "key": "companyCode",
+                  "value": "{{company_code}}"
+                },
+                {
+                  "key": "currencyCode",
+                  "value": "{{currency_code}}"
+                },
+                {
+                  "key": "runType",
+                  "value": "{{run_type}}"
+                },
+                {
+                  "key": "directoryPath",
+                  "value": ""
+                },
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Serializes the cache to a directory path on the server"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Custom",
+      "item": [
+        {
+          "name": "GetCustomPrice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n  \"custVend\": {\n    \"custVendKey\": 0,\n    \"custVendSourceRecId\": 0,\n    \"companyKey\": 0,\n    \"entityType\": 1,\n    \"code\": \"\"\n  },\n  \"documentSourceId\": \"00000000-0000-0000-0000-000000000000\",\n  \"salesId\": \"\",\n  \"currency\": \"\",\n  \"documentType\": 2,\n  \"lineFields\": {\n    \"documentLineSourceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"product\": {\n      \"productKey\": 0,\n      \"productSourceRecId\": 0,\n      \"code\": \"\"\n    },\n    \"unitOfMeasure\": {\n      \"unitOfMeasureCode\": \"\"\n    },\n    \"quantity\": 1,\n    \"effectiveDate\": \"2025-01-01T00:00:00Z\",\n    \"isInvoiced\": false,\n    \"listPrice\": 0,\n    \"netPrice\": 0\n  },\n  \"company\": \"{{company_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"requestType\": 0,\n  \"priceRequestSource\": 4\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Custom/GetCustomPrice",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Custom",
+                "GetCustomPrice"
+              ]
+            },
+            "description": "Gets a custom price. documentType: 2=SalesOrder. requestType: 0=PriceOnly. priceRequestSource: 4=PriceInquiry"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Diagnose",
+      "item": [
+        {
+          "name": "GetApplicationInfo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Diagnose/GetApplicationInfo",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Diagnose",
+                "GetApplicationInfo"
+              ]
+            },
+            "description": "Returns application state and configuration. Best endpoint to test auth is working."
+          },
+          "response": []
+        },
+        {
+          "name": "SetDiagnoseSetting",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numberOfHttpRequestsToSerialize\": 10,\n  \"serializationRoot\": \"\",\n  \"cleanSerializationRoot\": false\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Diagnose/SetDiagnoseSetting",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Diagnose",
+                "SetDiagnoseSetting"
+              ]
+            },
+            "description": "Sets serialization and diagnostic settings"
+          },
+          "response": []
+        },
+        {
+          "name": "DownloadSerializedCache",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Diagnose/DownloadSerializedCache",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Diagnose",
+                "DownloadSerializedCache"
+              ]
+            },
+            "description": "Downloads the serialized cache as a binary file"
+          },
+          "response": []
+        },
+        {
+          "name": "DownloadSerializedHttpRequests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Diagnose/DownloadSerializedHttpRequests",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Diagnose",
+                "DownloadSerializedHttpRequests"
+              ]
+            },
+            "description": "Downloads serialized HTTP requests as a binary file"
+          },
+          "response": []
+        },
+        {
+          "name": "DownloadSerializedPricingRequests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Diagnose/DownloadSerializedPricingRequests",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Diagnose",
+                "DownloadSerializedPricingRequests"
+              ]
+            },
+            "description": "Downloads serialized pricing requests as a binary file"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Message",
+      "item": [
+        {
+          "name": "AddDataMessage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messageId\": 0,\n  \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n  \"messageStatus\": 0,\n  \"cacheObjectType\": 0,\n  \"syncProgress\": 0,\n  \"changeType\": 0,\n  \"primaryKeys\": [],\n  \"companyCode\": \"{{company_code}}\",\n  \"serializedObject\": \"\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Message/AddDataMessage?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Message",
+                "AddDataMessage"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Adds a single data message. messageStatus: 0=Created. changeType: 0=Insert, 1=Update, 2=Delete"
+          },
+          "response": []
+        },
+        {
+          "name": "AddDataMessages",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"messageId\": 0,\n    \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n    \"messageStatus\": 0,\n    \"cacheObjectType\": 0,\n    \"syncProgress\": 0,\n    \"changeType\": 0,\n    \"primaryKeys\": [],\n    \"companyCode\": \"{{company_code}}\",\n    \"serializedObject\": \"\"\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Message/AddDataMessages?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Message",
+                "AddDataMessages"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Adds multiple data messages in one call"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "item": [
+        {
+          "name": "AddChangeNotification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cacheObjectType\": 0,\n  \"changeType\": 1,\n  \"primaryKey\": 0,\n  \"sourceRecId\": null,\n  \"code\": \"\",\n  \"companyKey\": null,\n  \"timeStamp\": null,\n  \"entityType\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Notification/AddChangeNotification",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Notification",
+                "AddChangeNotification"
+              ]
+            },
+            "description": "Adds a single change notification. changeType: 0=Insert, 1=Update, 2=Delete. entityType: 1=Customer, 2=Product, 4=Vendor"
+          },
+          "response": []
+        },
+        {
+          "name": "AddChangeNotificationSingle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cacheObjectType\": 0,\n  \"changeType\": 1,\n  \"primaryKey\": 0,\n  \"sourceRecId\": null,\n  \"code\": \"\",\n  \"companyKey\": null,\n  \"timeStamp\": null,\n  \"entityType\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Notification/AddChangeNotificationSingle?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Notification",
+                "AddChangeNotificationSingle"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Adds a single change notification with clientDataSource"
+          },
+          "response": []
+        },
+        {
+          "name": "AddChangeNotifications",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"cacheObjectType\": 0,\n    \"changeType\": 1,\n    \"primaryKey\": 0,\n    \"sourceRecId\": null,\n    \"code\": \"\",\n    \"companyKey\": null,\n    \"timeStamp\": null,\n    \"entityType\": 0\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Notification/AddChangeNotifications",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Notification",
+                "AddChangeNotifications"
+              ]
+            },
+            "description": "Adds multiple change notifications in one call"
+          },
+          "response": []
+        },
+        {
+          "name": "AddChangeNotificationCollection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"cacheObjectType\": 0,\n    \"changeType\": 1,\n    \"primaryKey\": 0,\n    \"sourceRecId\": null,\n    \"code\": \"\",\n    \"companyKey\": null,\n    \"timeStamp\": null,\n    \"entityType\": 0\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Notification/AddChangeNotificationCollection?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Notification",
+                "AddChangeNotificationCollection"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Adds a collection of change notifications with clientDataSource"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Price",
+      "item": [
+        {
+          "name": "GetPrice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n  \"custVend\": {\n    \"custVendKey\": 0,\n    \"custVendSourceRecId\": 0,\n    \"companyKey\": 0,\n    \"entityType\": 1,\n    \"code\": \"\"\n  },\n  \"documentSourceId\": \"00000000-0000-0000-0000-000000000000\",\n  \"salesId\": \"\",\n  \"currency\": \"\",\n  \"documentType\": 2,\n  \"lineFields\": {\n    \"documentLineSourceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"product\": {\n      \"productKey\": 0,\n      \"productSourceRecId\": 0,\n      \"code\": \"\"\n    },\n    \"unitOfMeasure\": {\n      \"unitOfMeasureCode\": \"\"\n    },\n    \"quantity\": 1,\n    \"effectiveDate\": \"2025-01-01T00:00:00Z\",\n    \"isInvoiced\": false,\n    \"listPrice\": 0,\n    \"netPrice\": 0\n  },\n  \"company\": \"{{company_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"requestType\": 0,\n  \"priceRequestSource\": 4,\n  \"accrualType\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Price/GetPrice",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Price",
+                "GetPrice"
+              ]
+            },
+            "description": "Gets a price for a single request. documentType: 2=SalesOrder. requestType: 0=PriceOnly. priceRequestSource: 4=PriceInquiry"
+          },
+          "response": []
+        },
+        {
+          "name": "PriceSingle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n  \"custVend\": {\n    \"custVendKey\": 0,\n    \"custVendSourceRecId\": 0,\n    \"companyKey\": 0,\n    \"entityType\": 1,\n    \"code\": \"\"\n  },\n  \"documentSourceId\": \"00000000-0000-0000-0000-000000000000\",\n  \"salesId\": \"\",\n  \"currency\": \"\",\n  \"documentType\": 2,\n  \"lineFields\": {\n    \"documentLineSourceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"product\": {\n      \"productKey\": 0,\n      \"productSourceRecId\": 0,\n      \"code\": \"\"\n    },\n    \"unitOfMeasure\": {\n      \"unitOfMeasureCode\": \"\"\n    },\n    \"quantity\": 1,\n    \"effectiveDate\": \"2025-01-01T00:00:00Z\",\n    \"isInvoiced\": false,\n    \"listPrice\": 0,\n    \"netPrice\": 0\n  },\n  \"company\": \"{{company_code}}\",\n  \"runType\": \"{{run_type}}\",\n  \"requestType\": 0,\n  \"priceRequestSource\": 4,\n  \"accrualType\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Price/PriceSingle?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Price",
+                "PriceSingle"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Gets a single price with clientDataSource query param"
+          },
+          "response": []
+        },
+        {
+          "name": "PriceRequest",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n    \"custVend\": {\n      \"custVendKey\": 0,\n      \"custVendSourceRecId\": 0,\n      \"companyKey\": 0,\n      \"entityType\": 1,\n      \"code\": \"\"\n    },\n    \"documentSourceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"currency\": \"\",\n    \"documentType\": 2,\n    \"lineFields\": {\n      \"documentLineSourceId\": \"00000000-0000-0000-0000-000000000000\",\n      \"product\": {\n        \"productKey\": 0,\n        \"productSourceRecId\": 0,\n        \"code\": \"\"\n      },\n      \"unitOfMeasure\": {\n        \"unitOfMeasureCode\": \"\"\n      },\n      \"quantity\": 1,\n      \"effectiveDate\": \"2025-01-01T00:00:00Z\",\n      \"isInvoiced\": false,\n      \"listPrice\": 0,\n      \"netPrice\": 0\n    },\n    \"company\": \"{{company_code}}\",\n    \"runType\": \"{{run_type}}\",\n    \"requestType\": 0,\n    \"priceRequestSource\": 4\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Price/PriceRequest",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Price",
+                "PriceRequest"
+              ]
+            },
+            "description": "Gets prices for multiple requests. Always returns 200 — errors are embedded in the response body."
+          },
+          "response": []
+        },
+        {
+          "name": "PriceCollection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"identifier\": \"00000000-0000-0000-0000-000000000000\",\n    \"custVend\": {\n      \"custVendKey\": 0,\n      \"custVendSourceRecId\": 0,\n      \"companyKey\": 0,\n      \"entityType\": 1,\n      \"code\": \"\"\n    },\n    \"documentSourceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"currency\": \"\",\n    \"documentType\": 2,\n    \"lineFields\": {\n      \"documentLineSourceId\": \"00000000-0000-0000-0000-000000000000\",\n      \"product\": {\n        \"productKey\": 0,\n        \"productSourceRecId\": 0,\n        \"code\": \"\"\n      },\n      \"unitOfMeasure\": {\n        \"unitOfMeasureCode\": \"\"\n      },\n      \"quantity\": 1,\n      \"effectiveDate\": \"2025-01-01T00:00:00Z\",\n      \"isInvoiced\": false,\n      \"listPrice\": 0,\n      \"netPrice\": 0\n    },\n    \"company\": \"{{company_code}}\",\n    \"runType\": \"{{run_type}}\",\n    \"requestType\": 0,\n    \"priceRequestSource\": 4\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Price/PriceCollection?clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Price",
+                "PriceCollection"
+              ],
+              "query": [
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Batches a collection of price requests in one call with clientDataSource"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Setting",
+      "item": [
+        {
+          "name": "SetPriceRequestsSerializationSettings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/pricingEngine/Setting/SetPriceRequestsSerializationSettings?requestNum=10&directoryPath=&clientDataSource={{client_data_source}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "pricingEngine",
+                "Setting",
+                "SetPriceRequestsSerializationSettings"
+              ],
+              "query": [
+                {
+                  "key": "requestNum",
+                  "value": "10"
+                },
+                {
+                  "key": "directoryPath",
+                  "value": ""
+                },
+                {
+                  "key": "clientDataSource",
+                  "value": "{{client_data_source}}"
+                }
+              ]
+            },
+            "description": "Sets serialization settings for future price requests. Known as SerializaPriceRequests in nPriceService .net 4."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "X-API-KEY",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "requests": {},
+        "exec": [
+          "const tokenUrl = `https://login.microsoftonline.com/${pm.collectionVariables.get('tenant_id')}/oauth2/v2.0/token`;",
+          "const clientId = pm.collectionVariables.get('client_id');",
+          "const clientSecret = pm.collectionVariables.get('client_secret');",
+          "const scope = `api://${clientId}/.default`;",
+          "const tokenExpiry = pm.collectionVariables.get('token_expiry');",
+          "const currentTime = Math.floor(Date.now() / 1000);",
+          "",
+          "if (!pm.collectionVariables.get('access_token') || currentTime >= tokenExpiry) {",
+          "  pm.sendRequest({",
+          "    url: tokenUrl,",
+          "    method: 'POST',",
+          "    header: { 'Content-Type': 'application/x-www-form-urlencoded' },",
+          "    body: {",
+          "      mode: 'urlencoded',",
+          "      urlencoded: [",
+          "        { key: 'grant_type', value: 'client_credentials' },",
+          "        { key: 'client_id', value: clientId },",
+          "        { key: 'client_secret', value: clientSecret },",
+          "        { key: 'scope', value: scope }",
+          "      ]",
+          "    }",
+          "  }, (err, res) => {",
+          "    if (!err) {",
+          "      const json = res.json();",
+          "      pm.collectionVariables.set('access_token', json.access_token);",
+          "      pm.collectionVariables.set('token_expiry', currentTime + json.expires_in - 60);",
+          "    }",
+          "  });",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://ffa-demo.flintfox.com:8005"
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "client_id",
+      "value": ""
+    },
+    {
+      "key": "client_secret",
+      "value": ""
+    },
+    {
+      "key": "tenant_id",
+      "value": ""
+    },
+    {
+      "key": "client_data_source",
+      "value": ""
+    },
+    {
+      "key": "company_code",
+      "value": ""
+    },
+    {
+      "key": "currency_code",
+      "value": ""
+    },
+    {
+      "key": "run_type",
+      "value": ""
+    }
+  ]
+}
